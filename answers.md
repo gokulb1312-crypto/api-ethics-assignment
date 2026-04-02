@@ -7,6 +7,8 @@ date_of_birth	- Indirect PII	- Mask
 job_title	    - Indirect PII	- Pseudonymize
 diagnosis_notes-Sensitive PII - (Health Data)	Pseudonymize
 
+
+
 Task 2 — Audit the API Script for Ethical Compliance
 
 Violation 1: Hardcoded API Key/-
@@ -41,12 +43,9 @@ for page in range(1, 21):  # Limit scope based on actual need
         API_URL,
         params={"page": page, "key": API_KEY}
     )
-
     if response.status_code != 200:
         break
-
     data = response.json()
-
     # De-identify BEFORE storing
     for r in data["results"]:
         cleaned_record = {
@@ -56,7 +55,6 @@ for page in range(1, 21):  # Limit scope based on actual need
             "diagnosis_notes": redact_sensitive_info(r.get("diagnosis_notes"))
         }
         records.append(cleaned_record)
-
-    time.sleep(0.5)  # Respect rate limits
-
+     time.sleep(0.5)  # Respect rate limits
+    
 save_to_database(records)"""
