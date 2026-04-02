@@ -1,11 +1,11 @@
 Task 1 — Classify and Handle PII Fields
 
-Field	        - Type	        - Action
-full_name     - Direct PII	  - Drop	
+Field	           Type	          Action
+full_name       - Direct PII	  - Drop	
 email	        - Direct PII	  - Drop	
-date_of_birth	- Indirect PII	- Mask
-job_title	    - Indirect PII	- Pseudonymize
-diagnosis_notes-Sensitive PII - (Health Data)	Pseudonymize
+date_of_birth	- Indirect PII	  - Mask
+job_title	    - Indirect PII	  - Pseudonymize
+diagnosis_notes -Sensitive PII    - (Health Data)Pseudonymize
 
 
 
