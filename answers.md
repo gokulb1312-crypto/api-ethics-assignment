@@ -33,6 +33,20 @@ if not API_KEY:
 
 Violation 2: Excessive Data Collection & Permanent Storage/-
 
+Problem:
+Pulling 100 pages blindly → may violate:
+API rate limits
+Data usage policies (bulk scraping)
+Violates data minimization and purpose limitation
+Potential non-compliance with privacy regulations
+
+Fix:
+Rate limiting (sleep) → avoids API abuse
+Scoped data collection → only necessary pages
+No raw PII storage → de-identification before persistence
+Purpose-bound dataset → aligned with research use
+
+
 """import time
 import requests
 
